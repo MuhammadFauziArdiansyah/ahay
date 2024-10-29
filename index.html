@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            position: relative;
+            width: 80vw;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            overflow: hidden;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #664a4a;
+        }
+        .image {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            display: none;
+            transition: opacity 0.3s ease;
+        }
+        .image1 {
+            display: block;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 300px;
+            position: relative;
+        }
+        #tidak {
+            margin-left: 100px;
+            position: absolute;
+            transition: top 0.3s ease, left 0.3s ease;
+        }
+        #ya, #tidak {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        a{
+            display: none;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            color: white;
+        
+            border-radius: 5px;
+        }
+        #ya {
+            background-color: #4CAF50;
+            color: white;
+            margin-left: -150px;
+        }
+        #tidak {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="text">Tapi Jemput Ya</h1>
+        <img src="1.png" alt="Image 1" class="image image1">
+        <img src="2.gif" alt="Image 2" class="image image2">
+        <img src="3.jpeg" alt="Image 3" class="image image3">
+        
+        <div class="btn-container">
+            <button id="ya">Okeee</button>
+            <button id="tidak">Gak</button>
+            <a href="https://api.whatsapp.com/send?phone=6281469747038&text=wkwkwkwkwk" id="wa" target="_blank">
+                Buka Whatsapp
+            </a>
+            
+        </div>
+    </div>
+
+        <script>
+    var btnTdk = document.getElementById("tidak");
+    var btnya = document.getElementById("ya");
+    var text = document.getElementById("text");
+    var wa = document.getElementById("wa");
+    var image1 = document.querySelector(".image1");
+    var image2 = document.querySelector(".image2");
+    var image3 = document.querySelector(".image3");
+
+    btnTdk.onclick = function() {
+        // Menyembunyikan semua gambar terlebih dahulu
+        image1.style.display = "none";
+        image2.style.display = "block";
+            btnTdk.style.display = "none";
+        image3.style.display = "none";
+        text.innerHTML = "weitsss"
+
+        // Increment number and reset if necessary
+       
+    };
+    btnya.onclick = function() {
+        // Menyembunyikan semua gambar terlebih dahulu
+        image1.style.display = "none";
+        image3.style.display = "block";
+            btnTdk.style.display = "none";
+            btnya.style.display = "none";
+        image2.style.display = "none";
+        text.innerHTML = "ditunggu"
+        wa.style.display = "block"
+        // Increment number and reset if necessary
+       
+    };
+</script>
+
+</body>
+</html>
